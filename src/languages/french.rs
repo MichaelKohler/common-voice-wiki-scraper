@@ -16,14 +16,14 @@ pub fn check(raw: &&str) -> bool {
     }
     let symbols = trimmed.chars().any(|c| {
         [
-            '<', '>', '«', '»', '+', '*', '\\', '#', '@', '^', '[', ']', '(', ')', '/', '\n',
+            '<', '>', '«', '»', '=', '"', '+', '*', '\\', '#', '@', '^', '[', ']', '(', ')', '/', '\n',
         ]
         .contains(&c)
     });
     if symbols {
         return false;
     }
-    let broken_space = ["  ", " ,", " .", " ?", " !", " ;"];
+    let broken_space = ["  ", " ,", " .", " ?", " !", " ;", " :"];
     if broken_space.iter().any(|broken| raw.contains(broken)) {
         return false;
     }
