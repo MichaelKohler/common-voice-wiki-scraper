@@ -37,7 +37,7 @@ pub fn check(raw: &&str) -> bool {
     if numbers {
         return false;
     }
-    let abrv = Regex::new(r"[[:upper:]]+\.*[[:upper:]]")
+    let abrv = Regex::new(r"[[:upper:]]+\.*[[:upper:]]|[[:upper:]]{1}\.")
         .unwrap()
         .is_match(&s);
     if abrv {
@@ -54,6 +54,7 @@ mod test {
     fn test_check() {
         assert_eq!(check(&"A.B"), false);
         assert_eq!(check(&r#""S.T.A.L.K.E.R."#), false);
+        assert_eq!(check(&r#"Parallèlement, A. M. Sugar est omniprésent"#), false);
         assert_eq!(check(&"foo\n\nfoo"), false);
     }
 }
