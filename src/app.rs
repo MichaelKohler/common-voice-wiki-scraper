@@ -1,7 +1,7 @@
 use std::ffi::OsString;
 
 use crate::extractor::choose;
-use crate::languages::english::check;
+use crate::languages::french::check;
 use crate::loader::load;
 use crate::loader::load_file_names;
 use clap::{App, Arg, ArgMatches, SubCommand};
@@ -54,7 +54,7 @@ where
         let texts = load(&file_name)?;
         for text in texts {
             let rng = SmallRng::from_entropy();
-            for sentence in choose(&text, &TrainingData::english(), rng, 3, check) {
+            for sentence in choose(&text, &TrainingData::french(), rng, 3, check) {
                 println!("{}", sentence);
                 char_count += sentence.chars().count();
                 sentence_count += 1;
