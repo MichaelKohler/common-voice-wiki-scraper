@@ -66,7 +66,7 @@ echo "Extracting dump"
 bzip2 -d -k $DUMP_PATH
 
 echo "Extracting with WikiExtractor"
-timeout 30 python $WIKI_EXTRACTOR_PATH --processes 4 --json $EXTRACTED_DUMP_PATH || true
+python $WIKI_EXTRACTOR_PATH --processes 4 --json $EXTRACTED_DUMP_PATH || true
 popd
 
 echo "Running extraction"
