@@ -11,22 +11,20 @@ jobs:
         rust: [nightly]
 
     steps:
-      - name: Space?
-        run: df -h
-    # - uses: hecrj/setup-rust-action@e0938ba
-    #   with:
-    #     rust-version: ${{ matrix.rust }}
-    # - uses: actions/checkout@master
-    # - uses: futuratrepadeira/changed-files@b4ef6fe
-    #   id: files
-    #   with:
-    #     repo-token: ${{ secrets.GITHUB_TOKEN }}
-    # - name: Sample extraction
-    #   run: ./scripts/sample-extraction.sh
-    #   env:
-    #     FILES_CREATED: ${{ steps.files.outputs.files_created }}
-    #     FILES_UPDATED: ${{ steps.files.outputs.files_updated }}
-    # - uses: actions/upload-artifact@v1
-    #   with:
-    #     name: extraction-sample
-    #     path: output/
+    - uses: hecrj/setup-rust-action@e0938ba
+      with:
+        rust-version: ${{ matrix.rust }}
+    - uses: actions/checkout@master
+    - uses: futuratrepadeira/changed-files@b4ef6fe
+      id: files
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Sample extraction
+      run: ./scripts/sample-extraction.sh
+      env:
+        FILES_CREATED: ${{ steps.files.outputs.files_created }}
+        FILES_UPDATED: ${{ steps.files.outputs.files_updated }}
+    - uses: actions/upload-artifact@v1
+      with:
+        name: extraction-sample
+        path: output/

@@ -31,7 +31,7 @@ mkdir -p $OUTPUT_PATH
 # LANGUAGE_CODE=${LANGUAGE/.txt/""}
 # echo "Determined that we should run an export for $LANGUAGE_CODE"
 
-LANGUAGE_CODE="de"
+LANGUAGE_CODE="es"
 # DUMP_BASE_PATH="https://dumps.wikimedia.org/${LANGUAGE_CODE}wiki/latest/"
 
 # echo "Downloading Dump Listing..."
@@ -49,9 +49,9 @@ LANGUAGE_CODE="de"
 # rm listing.html
 
 # FILENAME=${ARCHIVE_FILE_NAME/.bz2/""}
-DUMP_URL="https://dumps.wikimedia.org/dewiki/latest/dewiki-latest-pages-articles-multistream.xml.bz2"
-ARCHIVE_FILE_NAME="dewiki-latest-pages-articles-multistream.xml.bz2"
-FILENAME="dewiki-latest-pages-articles-multistream.xml"
+DUMP_URL="https://dumps.wikimedia.org/eswiki/latest/eswiki-latest-pages-articles-multistream.xml.bz2"
+ARCHIVE_FILE_NAME="eswiki-latest-pages-articles-multistream.xml.bz2"
+FILENAME="eswiki-latest-pages-articles-multistream.xml"
 DUMP_PATH="$WORKSPACE/$ARCHIVE_FILE_NAME"
 EXTRACTED_DUMP_PATH="$WORKSPACE/$FILENAME"
 
