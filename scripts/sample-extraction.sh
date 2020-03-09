@@ -68,5 +68,5 @@ popd
 
 echo "Running extraction"
 pushd $PROJECT_ROOT
-cargo run -- extract -l $LANGUAGE_CODE -d $EXTRACTED_TEXT_PATH > $EXTRACTED_SENTENCES_PATH
+cargo run -- extract -l $LANGUAGE_CODE -d $EXTRACTED_TEXT_PATH --no_check > $EXTRACTED_SENTENCES_PATH
 popd
