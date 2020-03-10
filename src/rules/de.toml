@@ -9,7 +9,7 @@ needs_letter_start = true
 needs_uppercase_start = true
 allowed_symbols_regex = "[\u0020-\u007BäöüßÄÖÜ„“‚‘’–\\.]"
 disallowed_symbols = []
-broken_whitespace = ["  ", " ,", " .", " ?", " !", " ;"]
+broken_whitespace = ["  ", " ,", " .", " ?", " !", " ;", "   "]
 
 matching_symbols = [
   ["„", "“"]
