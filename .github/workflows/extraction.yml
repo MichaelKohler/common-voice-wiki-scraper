@@ -19,7 +19,7 @@ jobs:
       run: echo ::set-env name=COMMIT_MESSAGE::$(git log --format=%B -n 1 ${{ github.event.after }})
 
     - uses: futuratrepadeira/changed-files@b4ef6fe
-      if: "!contains( env.COMMIT_MESSAGE , 'full-extraction' )"
+      if: "contains( github.ref , 'pull' )"
       id: files
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
