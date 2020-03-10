@@ -199,4 +199,4 @@ To skip the extraction, include `skip-extraction` in your commit message.
 
 ### On pushes to master
 
-On every push to master, we will run a full sentence extraction if the commit message includes `full-extraction`.
+On every push to master, we will run a full sentence extraction on the specified language if the commit message includes `full-extraction=<language>`.

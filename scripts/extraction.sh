@@ -11,6 +11,9 @@ EXTRACTED_TEXT_PATH="$WORKSPACE/text"
 OUTPUT_PATH="$WORKSPACE/output"
 EXTRACTED_SENTENCES_PATH="$OUTPUT_PATH/extraction-sample.txt"
 
+echo "COMMIT?"
+echo $COMMIT_MESSAGE
+
 mkdir -p $OUTPUT_PATH
 
 echo "Files created: $FILES_CREATED"
